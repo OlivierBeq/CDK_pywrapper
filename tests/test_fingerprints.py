@@ -1,23 +1,28 @@
 # -*- coding: utf-8 -*-
-
-
 """Tests for molecular fingerprints."""
 
 import unittest
 
 from CDK_pywrapper import CDK, FPType
-from tests.constants import *
+from tests.constants import MOLECULES
 
 
 class TestFingerprints(unittest.TestCase):
     """Tests for CDK_pywrapper molecular fingerprints."""
-
     def setUp(self) -> None:
+        """Load molecules."""
         self.molecules = list(MOLECULES.values())
 
     def test_fingerprint(self):
-        sizes = {FPType.EStateFP: 79, FPType.MACCSFP: 166, FPType.PubchemFP: 881,
-                 FPType.KRFP: 4860, FPType.SubFP: 307, FPType.AP2DFP: 780}
+        """Test the dimensions of the output fingerprint dataframe."""
+        sizes = {
+            FPType.EStateFP: 79,
+            FPType.MACCSFP: 166,
+            FPType.PubchemFP: 881,
+            FPType.KRFP: 4860,
+            FPType.SubFP: 307,
+            FPType.AP2DFP: 780
+        }
         for fp_type in FPType:
             cdk = CDK(fp_type)
             values = cdk.calculate(self.molecules, show_banner=False)
@@ -29,10 +34,16 @@ class TestFingerprints(unittest.TestCase):
                 self.assertEqual(len(values.columns.unique().tolist()), len(values.columns))
             self.assertFalse(values.isna().any().any())
 
-
     def test_fingerprint_multithread(self):
-        sizes = {FPType.EStateFP: 79, FPType.MACCSFP: 166, FPType.PubchemFP: 881,
-                 FPType.KRFP: 4860, FPType.SubFP: 307, FPType.AP2DFP: 780}
+        """Test the dimensions of the output fingerprint dataframes calculated by different processes."""
+        sizes = {
+            FPType.EStateFP: 79,
+            FPType.MACCSFP: 166,
+            FPType.PubchemFP: 881,
+            FPType.KRFP: 4860,
+            FPType.SubFP: 307,
+            FPType.AP2DFP: 780
+        }
         for fp_type in FPType:
             cdk = CDK(fp_type)
             values = cdk.calculate(self.molecules, show_banner=False, njobs=-1, chunksize=1)

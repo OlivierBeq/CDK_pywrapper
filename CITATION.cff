@@ -1,0 +1,8 @@
+cff-version: 1.0.2
+message: "If you use this software, please cite it as below."
+title: "CDK_pywrapper"
+authors:
+  - name: "Olivier J. M. Béquignon"
+version: 0.0.1
+doi:
+url: "https://github.com/OlivierBeq/CDK_pywrapper"
