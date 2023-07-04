@@ -16,11 +16,11 @@ from rdkit import Chem
 
 def install_jre(version: int = 19):
     """Install a Java Runtime Environment."""
-    path = get_jre_in_dir(_JRE_DIR)
+    path = get_jre_in_dir(_JRE_DIR, version)
     if len(path) == 0:
         # Could not find JRE, install it
         _ = _jre_install(version, jre=True)
-        path = get_jre_in_dir(_JRE_DIR)
+        path = get_jre_in_dir(_JRE_DIR, version)
     return path
 
 
@@ -45,17 +45,18 @@ def make_temp_jre() -> Tuple[str, str]:
     return outdir, path
 
 
-def get_jre_in_dir(dir: str):
+def get_jre_in_dir(dir: str, version: int = 19):
     """Recursively search the directory to find a JRE."""
-    path = glob.glob(
+    paths = glob.glob(
         os.path.join(dir, "**", "server", "jvm.dll" if sys.platform == "win32" else "libjvm.so"), recursive=True
     )
+    path = [path for path in paths if f"jre-{version}" in path]
     if len(path):
         return path[0]
     return None
 
 
-def install_java(version: int = 11):
+def install_java(version: int = 19):
     """Install a Java Runtime Environment."""
     path = get_java_in_dir(_JRE_DIR, version)
     if path is None:
