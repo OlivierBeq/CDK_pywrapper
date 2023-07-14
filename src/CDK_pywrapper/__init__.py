@@ -4,4 +4,4 @@
 
 from .cdk_pywrapper import CDK, FPType
 
-__version__ = "0.0.1-post1"
+__version__ = "0.0.2-post1"

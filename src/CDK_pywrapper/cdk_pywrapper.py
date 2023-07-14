@@ -47,9 +47,10 @@ class CDK:
     # Path to the JAR file
     _jarfile = os.path.abspath(os.path.join(__file__, os.pardir, 'CDKdesc.jar'))
 
-    def __init__(self, fingerprint: FPType = None, nbits: int = 1024, depth: int = 6):
+    def __init__(self, ignore_3D: bool = True, fingerprint: FPType = None, nbits: int = 1024, depth: int = 6):
         """Instantiate a wrapper to calculate CDK molecular descriptors or a fingerprint.
 
+        :param ignore_3D: whether to include 3D molecular descriptors
         :param fingerprint: a fingerprint type to be calculated (default: None, calculates descriptors)
         :param nbits: number of bits (default: 1024 unless the fingerprint has a fixed size)
         :param depth: depth of the fingerprint (default: 6 unless the fingerprint does not depend on depth)
@@ -60,6 +61,7 @@ class CDK:
         if fingerprint is not None:
             if not isinstance(fingerprint, FPType):
                 raise TypeError(f'Fingerprint type not supported: {fingerprint}')
+        self.include_3D = not ignore_3D
         self.fingerprint = None if fingerprint is None else fingerprint.name
         self.nbits = nbits
         self.depth = depth
@@ -85,9 +87,11 @@ class CDK:
                 futures = [worker.submit(self._multiproc_calculate, list(chunk))
                            for chunk in more_itertools.batched(mols, chunksize)
                            ]
-            return pd.concat([future.result()
-                              for future in futures]
-                             ).reset_index(drop=True).fillna(0).convert_dtypes()
+            return (pd.concat([future.result() for future in futures]).
+                    reset_index(drop=True)
+                    .fillna(0)
+                    .convert_dtypes()
+                    )
         # Single process
         return self._calculate(list(mols))
 
@@ -122,6 +126,7 @@ Steinbeck et al., (2003) J. Chem. Inf. Comput. Sci. 43(2):493-500, doi:10.1021/c
             self._java_path = install_java(19)
         # 2) Create temp SD v2k file
         self._tmp_sd = mktempfile('molecules_v2k.sd')
+        self._n_mols = 0
         self._skipped = []
         self.n = 0
         try:
@@ -137,11 +142,14 @@ Steinbeck et al., (2003) J. Chem. Inf. Comput. Sci. 43(2):493-500, doi:10.1021/c
                     if needsHs(mol):
                         warnings.warn('Molecule lacks hydrogen atoms: this might affect the value of calculated descriptors')
                     # Are molecules 3D
-                    confs = list(mol.GetConformers())
-                    if self.fingerprint is None and not (len(confs) > 0 and confs[-1].Is3D()):
-                        raise ValueError('Cannot calculate the 3D descriptors of a conformer-less molecule')
+                    if self.include_3D:
+                        confs = list(mol.GetConformers())
+                        if self.fingerprint is None and not (len(confs) > 0 and confs[-1].Is3D()):
+                            raise ValueError('Cannot calculate the 3D descriptors of a conformer-less molecule')
                     writer.write(mol)
+                    self._n_mols += 1
                 else:
+                    print(i)
                     self._skipped.append(i)
                 self.n += 1
             writer.close()
@@ -171,13 +179,24 @@ Steinbeck et al., (2003) J. Chem. Inf. Comput. Sci. 43(2):493-500, doi:10.1021/c
         """
         with Popen(command.split(), stdout=PIPE) as process:
             values = process.stdout.read().decode()
-            if '{' not in values:
+            # Empty result file
+            if len(values) == 0:
+                details = self.get_details()
+                values = pd.DataFrame(np.full((self._n_mols, details.shape[0]), np.nan),
+                                      columns=details.Name)
+            elif '{' not in values:
                 values = pd.read_csv(io.StringIO(values), sep=' ')
             else:
                 try:
                     values = pd.DataFrame.from_dict(eval('{%s}' % values), orient='index').fillna(0)
                 except pd.errors.EmptyDataError:
                     raise RuntimeError('CDK could not obtain molecular descriptors, maybe due to a faulty molecule')
+            # If only 2D, remove 3D descriptors
+            if not self.include_3D and self.fingerprint is None:
+                # Get 3D descriptor names to remove
+                descs_3D = self.get_details()
+                descs_3D = descs_3D[descs_3D.Dimensions == '3D']
+                values = values.drop(columns=descs_3D.Name.tolist())
         return values
 
     def _calculate(self, mols: List[Chem.Mol]) -> pd.DataFrame:
@@ -216,3 +235,17 @@ Steinbeck et al., (2003) J. Chem. Inf. Comput. Sci. 43(2):493-500, doi:10.1021/c
         # Run copy
         result = cdk.calculate(mols, show_banner=False, njobs=1)
         return result
+
+    @staticmethod
+    def get_details(desc_name: Optional[str] = None):
+        """Obtain details about either one or all descriptors.
+
+        :param desc_name: the name of the descriptor to obtain details about (default: None).
+        If None, returns details about all descriptors.
+        """
+        details = pd.read_json(os.path.abspath(os.path.join(__file__, os.pardir, 'descs.json')), orient='index')
+        if desc_name is not None:
+            if desc_name not in details.Name.tolist():
+                raise ValueError(f'descriptor name {desc_name} is not available')
+            details = details[details.Name == desc_name]
+        return details

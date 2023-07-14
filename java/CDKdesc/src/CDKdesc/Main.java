@@ -163,6 +163,7 @@ public class Main {
                         Aromaticity aromaticity = new Aromaticity(ElectronDonation.daylight(),
                                 Cycles.vertexShort());
                         aromaticity.apply(molecule);
+                        boolean skip = false;
                         List<String> desc_values = new ArrayList<>();
                         // Iterate over descriptors
                         for (IDescriptor desc : descriptors) {
@@ -183,15 +184,21 @@ public class Main {
                                         .toString()
                                         .split(",")));
                             } catch (Exception e){
+                                skip = true;
+                                break;
                             }
                         }
-                        // Print descriptor names
-                        if (!obtained_names) {
-                            System.out.println(String.join(" ", value_names));
-                            obtained_names = true;
+                        if (skip) {
+                            System.out.println(String.join(" ", Collections.nCopies(descriptors.size(), "NaN")));
+                        } else {
+                            // Print descriptor names
+                            if (!obtained_names) {
+                                System.out.println(String.join(" ", value_names));
+                                obtained_names = true;
+                            }
+                            // Print values to sdtout
+                            System.out.println(String.join(" ", desc_values));
                         }
-                        // Print values to sdtout
-                        System.out.println(String.join(" ", desc_values));
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

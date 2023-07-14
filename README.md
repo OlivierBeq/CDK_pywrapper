@@ -22,7 +22,6 @@ pip install CDK-pywrapper
 ```python
 from CDK_pywrapper import CDK
 from rdkit import Chem
-from rdkit.Chem import AllChem
 
 smiles_list = [
   # erlotinib
@@ -35,21 +34,32 @@ smiles_list = [
   "N.N.Cl[Pt]Cl"
 ]
 mols = [Chem.AddHs(Chem.MolFromSmiles(smiles)) for smiles in smiles_list]
-for mol in mols:
-    _ = AllChem.EmbedMolecule(mol)
 
 cdk = CDK()
 print(cdk.calculate(mols))
 ```
 
-The above calculates 287 molecular descriptors (23 1D, 200 2D and 64 3D).<br/>
-:warning: Molecules are required to have conformers for descriptors to be calculated.<br/>
+The above calculates 222 molecular descriptors (23 1D and 200 2D).<br/>
+
+The additional 65 three-dimensional (3D) descriptors may be obtained with the following:
+:warning: Molecules are required to have conformers for 3D descriptors to be calculated.<br/>
+
+```python
+from rdkit.Chem import AllChem
+
+for mol in mols:
+    _ = AllChem.EmbedMolecule(mol)
+
+cdk = CDK(ignore_3D=False)
+print(cdk.calculate(mols))
+```
+
 
 To obtain molecular fingerprint, one can used the following:
 
 ```python
 from CDK_pywrapper import CDK, FPType
-cdk = CDK(FPType.PubchemFP)
+cdk = CDK(fingerprint=.PubchemFP)
 print(cdk.calculate(mols))
 ```
 
@@ -74,15 +84,17 @@ The following fingerprints can be calculated:
 ## Documentation
 
 ```python
-class CDK(fingerprint=None, nbits=1024, depth=6):
+class CDK(ignore_3D=True, fingerprint=None, nbits=1024, depth=6):
 ```
 
 Constructor of a CDK calculator for molecular descriptors or fingerprints
 
 Parameters:
 
+- ***ignore_3D  : bool***
+  Should 3D molecular descriptors be calculated (default: False). Ignored if a fingerprint is set.
 - ***fingerprint  : FPType***  
-  Type of fingerprint to calculate (default: None). If None, calculate descriptors
+  Type of fingerprint to calculate (default: None). If None, calculate descriptors.
 - ***nbits  : int***  
   Number of bits in the fingerprint.
 - ***depth  : int***  
@@ -93,14 +105,14 @@ Parameters:
 def calculate(mols, show_banner=True, njobs=1, chunksize=1000):
 ```
 
-Default method to calculate BlueDesc fingerprints.
+Default method to calculate CDK molecular descriptors and fingerprints.
 
 Parameters:
 
 - ***mols  : Iterable[Chem.Mol]***  
   RDKit molecule objects for which to obtain CDK descriptors.
 - ***show_banner  : bool***  
-  Displays default notice about BlueDesc.
+  Displays default notice about CDK.
 - ***njobs  : int***  
   Maximum number of simultaneous processes.
 - ***chunksize  : int***  

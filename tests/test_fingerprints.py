@@ -19,7 +19,7 @@ class TestFingerprints(unittest.TestCase):
         sizes = {FPType.EStateFP: 79, FPType.MACCSFP: 166, FPType.PubchemFP: 881,
                  FPType.KRFP: 4860, FPType.SubFP: 307, FPType.AP2DFP: 780}
         for fp_type in FPType:
-            cdk = CDK(fp_type)
+            cdk = CDK(fingerprint=fp_type)
             values = cdk.calculate(self.molecules, show_banner=False)
             if fp_type is not FPType.SigFP:
                 self.assertEqual(values.shape, (len(MOLECULES), sizes.get(fp_type, 1024)))
@@ -34,7 +34,7 @@ class TestFingerprints(unittest.TestCase):
         sizes = {FPType.EStateFP: 79, FPType.MACCSFP: 166, FPType.PubchemFP: 881,
                  FPType.KRFP: 4860, FPType.SubFP: 307, FPType.AP2DFP: 780}
         for fp_type in FPType:
-            cdk = CDK(fp_type)
+            cdk = CDK(fingerprint=fp_type)
             values = cdk.calculate(self.molecules, show_banner=False, njobs=-1, chunksize=1)
             if fp_type is not FPType.SigFP:
                 self.assertEqual(values.shape, (len(MOLECULES), sizes.get(fp_type, 1024)))

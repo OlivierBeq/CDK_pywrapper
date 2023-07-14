@@ -1,0 +1,1724 @@
+{
+    "0":{
+        "Name":"nAcid",
+        "Description":"The number of acidic groups.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "1":{
+        "Name":"naAromAtom",
+        "Description":"The number of aromatic atoms in an atom container.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "2":{
+        "Name":"nAromBond",
+        "Description":"The number of aromatic atoms in an AtomContainer.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "3":{
+        "Name":"nAtom",
+        "Description":"The number of atoms of a certain element type.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "4":{
+        "Name":"nBase",
+        "Description":"The number of basic groups.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "5":{
+        "Name":"nB",
+        "Description":"The number of bonds of a certain bond order.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "6":{
+        "Name":"HybRatio",
+        "Description":"The fraction of sp3 carbons to sp2 carbons.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "7":{
+        "Name":"Fsp3",
+        "Description":"The fraction of sp3 carbons to all carbons.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "8":{
+        "Name":"nAtomLC",
+        "Description":"The number of atoms in the largest chain.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "9":{
+        "Name":"nAtomP",
+        "Description":"?The number of atoms in the largest pi system.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "10":{
+        "Name":"nAtomLAC",
+        "Description":"The number of atoms in the longest aliphatic chain.",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "11":{
+        "Name":"nRotB",
+        "Description":"The number of rotatable bonds is given by the SMARTS specified by Daylight on?SMARTS tutorial",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "12":{
+        "Name":"nSmallRings",
+        "Description":"total number of small rings (of size 3 through 9)",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "13":{
+        "Name":"nAromRings",
+        "Description":"total number of small aromatic rings",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "14":{
+        "Name":"nRingBlocks",
+        "Description":"total number of distinct ring blocks",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "15":{
+        "Name":"nAromBlocks",
+        "Description":"total number of aromatically connected components",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "16":{
+        "Name":"nRings3",
+        "Description":"total number of 3-membered rings",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "17":{
+        "Name":"nRings4",
+        "Description":"total number of 4-membered rings",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "18":{
+        "Name":"nRings5",
+        "Description":"total number of 5-membered rings",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "19":{
+        "Name":"nRings6",
+        "Description":"total number of 6-membered rings",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "20":{
+        "Name":"nRings7",
+        "Description":"total number of 7-membered rings",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "21":{
+        "Name":"nRings8",
+        "Description":"total number of 8-membered rings",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "22":{
+        "Name":"nRings9",
+        "Description":"total number of 9-membered rings",
+        "Type":"Constitutional descriptors",
+        "Dimensions":"1D"
+    },
+    "23":{
+        "Name":"ALogP",
+        "Description":"This class calculates ALOGP (Ghose-Crippen LogKow) and the Ghose-Crippen molar refractivity [Ghose, A.K. and Crippen, G.M. ,?Atomic physicochemical parameters for three-dimensional structure-directed quantitative structure-activity relationships. I. Partition coefficients as a measure of hydrophobicity, Journal of Computational Chemistry,?1986, 7:565-577, Ghose, A.K. and Crippen, G.M. ,?Atomic physicochemical parameters for three-dimensional-structure-directed quantitative structure-activity relationships. 2. Modeling dispersive and hydrophobic interactions, Journal of Chemical Information and Computer Science,?1987, 27:21-35].",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "24":{
+        "Name":"ALogp2",
+        "Description":"This class calculates ALOGP (Ghose-Crippen LogKow) and the Ghose-Crippen molar refractivity [Ghose, A.K. and Crippen, G.M. ,?Atomic physicochemical parameters for three-dimensional structure-directed quantitative structure-activity relationships. I. Partition coefficients as a measure of hydrophobicity, Journal of Computational Chemistry,?1986, 7:565-577, Ghose, A.K. and Crippen, G.M. ,?Atomic physicochemical parameters for three-dimensional-structure-directed quantitative structure-activity relationships. 2. Modeling dispersive and hydrophobic interactions, Journal of Chemical Information and Computer Science,?1987, 27:21-35].",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "25":{
+        "Name":"AMR",
+        "Description":"This class calculates ALOGP (Ghose-Crippen LogKow) and the Ghose-Crippen molar refractivity [Ghose, A.K. and Crippen, G.M. ,?Atomic physicochemical parameters for three-dimensional structure-directed quantitative structure-activity relationships. I. Partition coefficients as a measure of hydrophobicity, Journal of Computational Chemistry,?1986, 7:565-577, Ghose, A.K. and Crippen, G.M. ,?Atomic physicochemical parameters for three-dimensional-structure-directed quantitative structure-activity relationships. 2. Modeling dispersive and hydrophobic interactions, Journal of Chemical Information and Computer Science,?1987, 27:21-35].",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "26":{
+        "Name":"BCUTw-1l",
+        "Description":"Eigenvalue based descriptor noted for its utility in chemical diversity.",
+        "Type":"BCUT descriptors",
+        "Dimensions":"2D"
+    },
+    "27":{
+        "Name":"BCUTw-1h",
+        "Description":"Eigenvalue based descriptor noted for its utility in chemical diversity.",
+        "Type":"BCUT descriptors",
+        "Dimensions":"2D"
+    },
+    "28":{
+        "Name":"BCUTc-1l",
+        "Description":"Eigenvalue based descriptor noted for its utility in chemical diversity.",
+        "Type":"BCUT descriptors",
+        "Dimensions":"2D"
+    },
+    "29":{
+        "Name":"BCUTc-1h",
+        "Description":"Eigenvalue based descriptor noted for its utility in chemical diversity.",
+        "Type":"BCUT descriptors",
+        "Dimensions":"2D"
+    },
+    "30":{
+        "Name":"BCUTp-1l",
+        "Description":"Eigenvalue based descriptor noted for its utility in chemical diversity.",
+        "Type":"BCUT descriptors",
+        "Dimensions":"2D"
+    },
+    "31":{
+        "Name":"BCUTp-1h",
+        "Description":"Eigenvalue based descriptor noted for its utility in chemical diversity.",
+        "Type":"BCUT descriptors",
+        "Dimensions":"2D"
+    },
+    "32":{
+        "Name":"fragC",
+        "Description":"the complexity of a system. The complexity is defined as [Nilakantan, R. and Nunn, D.S. and Greenblatt, L. and Walker, G. and Haraki, K. and Mobilio, D., A family of ring system-based structural fragments for use in structure-activity studies: database mining and recursive partitioning., Journal of chemical information and modeling, 2006, 46:1069-1077]:",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "33":{
+        "Name":"apol",
+        "Description":"Sum of the atomic polarizabilities (including implicit hydrogens).",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "34":{
+        "Name":"ATSc1",
+        "Description":"?ATS autocorrelation descriptor, where the weight equal to the charges.",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "35":{
+        "Name":"ATSc2",
+        "Description":"?ATS autocorrelation descriptor, where the weight equal to the charges.",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "36":{
+        "Name":"ATSc3",
+        "Description":"?ATS autocorrelation descriptor, where the weight equal to the charges.",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "37":{
+        "Name":"ATSc4",
+        "Description":"?ATS autocorrelation descriptor, where the weight equal to the charges.",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "38":{
+        "Name":"ATSc5",
+        "Description":"?ATS autocorrelation descriptor, where the weight equal to the charges.",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "39":{
+        "Name":"ATSm1",
+        "Description":"ATS autocorrelation descriptor, where the weight equal to the scaled atomic mass [Moreau G. and Broto P.,?The autocorrelation of a topological structure: A new molecular descriptor, Nouveau Journal de Chimie,?1980, ?:359-360].",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "40":{
+        "Name":"ATSm2",
+        "Description":"ATS autocorrelation descriptor, where the weight equal to the scaled atomic mass [Moreau G. and Broto P.,?The autocorrelation of a topological structure: A new molecular descriptor, Nouveau Journal de Chimie,?1980, ?:359-361].",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "41":{
+        "Name":"ATSm3",
+        "Description":"ATS autocorrelation descriptor, where the weight equal to the scaled atomic mass [Moreau G. and Broto P.,?The autocorrelation of a topological structure: A new molecular descriptor, Nouveau Journal de Chimie,?1980, ?:359-362].",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "42":{
+        "Name":"ATSm4",
+        "Description":"ATS autocorrelation descriptor, where the weight equal to the scaled atomic mass [Moreau G. and Broto P.,?The autocorrelation of a topological structure: A new molecular descriptor, Nouveau Journal de Chimie,?1980, ?:359-363].",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "43":{
+        "Name":"ATSm5",
+        "Description":"ATS autocorrelation descriptor, where the weight equal to the scaled atomic mass [Moreau G. and Broto P.,?The autocorrelation of a topological structure: A new molecular descriptor, Nouveau Journal de Chimie,?1980, ?:359-364].",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "44":{
+        "Name":"ATSp1",
+        "Description":"ATS autocorrelation descriptor, where the weight equal to the charges.",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "45":{
+        "Name":"ATSp2",
+        "Description":"ATS autocorrelation descriptor, where the weight equal to the charges.",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "46":{
+        "Name":"ATSp3",
+        "Description":"ATS autocorrelation descriptor, where the weight equal to the charges.",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "47":{
+        "Name":"ATSp4",
+        "Description":"ATS autocorrelation descriptor, where the weight equal to the charges.",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "48":{
+        "Name":"ATSp5",
+        "Description":"ATS autocorrelation descriptor, where the weight equal to the charges.",
+        "Type":"Autocorrelation descriptors",
+        "Dimensions":"2D"
+    },
+    "49":{
+        "Name":"bpol",
+        "Description":"Sum of the absolute value of the difference between atomic polarizabilities of all bonded atoms in the molecule (including implicit hydrogens) with polarizabilities taken from http:\/\/www.sunysccc.edu\/academic\/mst\/ptable\/p-table2.htm This descriptor assumes 2-centered bonds.",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "50":{
+        "Name":"C1SP1",
+        "Description":"Topological descriptor characterizing the carbon connectivity.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "51":{
+        "Name":"C2SP1",
+        "Description":"Topological descriptor characterizing the carbon connectivity.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "52":{
+        "Name":"C1SP2",
+        "Description":"Topological descriptor characterizing the carbon connectivity.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "53":{
+        "Name":"C2SP2",
+        "Description":"Topological descriptor characterizing the carbon connectivity.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "54":{
+        "Name":"C3SP2",
+        "Description":"Topological descriptor characterizing the carbon connectivity.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "55":{
+        "Name":"C1SP3",
+        "Description":"Topological descriptor characterizing the carbon connectivity.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "56":{
+        "Name":"C2SP3",
+        "Description":"Topological descriptor characterizing the carbon connectivity.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "57":{
+        "Name":"C3SP3",
+        "Description":"Topological descriptor characterizing the carbon connectivity.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "58":{
+        "Name":"C4SP3",
+        "Description":"Topological descriptor characterizing the carbon connectivity.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "59":{
+        "Name":"SCH-3",
+        "Description":"Evaluates chi chain descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "60":{
+        "Name":"SCH-4",
+        "Description":"Evaluates chi chain descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "61":{
+        "Name":"SCH-5",
+        "Description":"Evaluates chi chain descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "62":{
+        "Name":"SCH-6",
+        "Description":"Evaluates chi chain descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "63":{
+        "Name":"SCH-7",
+        "Description":"Evaluates chi chain descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "64":{
+        "Name":"VCH-3",
+        "Description":"Evaluates chi chain descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "65":{
+        "Name":"VCH-4",
+        "Description":"Evaluates chi chain descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "66":{
+        "Name":"VCH-5",
+        "Description":"Evaluates chi chain descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "67":{
+        "Name":"VCH-6",
+        "Description":"Evaluates chi chain descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "68":{
+        "Name":"VCH-7",
+        "Description":"Evaluates chi chain descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "69":{
+        "Name":"SC-3",
+        "Description":"Evaluates chi cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "70":{
+        "Name":"SC-4",
+        "Description":"Evaluates chi cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "71":{
+        "Name":"SC-5",
+        "Description":"Evaluates chi cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "72":{
+        "Name":"SC-6",
+        "Description":"Evaluates chi cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "73":{
+        "Name":"VC-3",
+        "Description":"Evaluates chi cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "74":{
+        "Name":"VC-4",
+        "Description":"Evaluates chi cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "75":{
+        "Name":"VC-5",
+        "Description":"Evaluates chi cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "76":{
+        "Name":"VC-6",
+        "Description":"Evaluates chi cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "77":{
+        "Name":"SP-0",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "78":{
+        "Name":"SP-1",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "79":{
+        "Name":"SP-2",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "80":{
+        "Name":"SP-3",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "81":{
+        "Name":"SP-4",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "82":{
+        "Name":"SP-5",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "83":{
+        "Name":"SP-6",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "84":{
+        "Name":"SP-7",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "85":{
+        "Name":"VP-0",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "86":{
+        "Name":"VP-1",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "87":{
+        "Name":"VP-2",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "88":{
+        "Name":"VP-3",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "89":{
+        "Name":"VP-4",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "90":{
+        "Name":"VP-5",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "91":{
+        "Name":"VP-6",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "92":{
+        "Name":"VP-7",
+        "Description":"Evaluates chi path descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "93":{
+        "Name":"SPC-4",
+        "Description":"Evaluates chi path cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "94":{
+        "Name":"SPC-5",
+        "Description":"Evaluates chi path cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "95":{
+        "Name":"SPC-6",
+        "Description":"Evaluates chi path cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "96":{
+        "Name":"VPC-4",
+        "Description":"Evaluates chi path cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "97":{
+        "Name":"VPC-5",
+        "Description":"Evaluates chi path cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "98":{
+        "Name":"VPC-6",
+        "Description":"Evaluates chi path cluster descriptors.",
+        "Type":"Connectivity descriptors",
+        "Dimensions":"2D"
+    },
+    "99":{
+        "Name":"ECCEN",
+        "Description":"A topological descriptor combining distance and adjacency information.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "100":{
+        "Name":"FMF",
+        "Description":"An implementation of the FMF descriptor characterizing complexity of a molecule.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "101":{
+        "Name":"nHBAcc",
+        "Description":"The number of hydrogen bond donors using a slightly simplified version of the?PHACIR atom types.",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "102":{
+        "Name":"nHBDon",
+        "Description":"?The number of hydrogen bond acceptors using a slightly simplified version of the?PHACIR atom types.",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "103":{
+        "Name":"khs.sLi",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "104":{
+        "Name":"khs.ssBe",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "105":{
+        "Name":"khs.ssssBe",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "106":{
+        "Name":"khs.ssBH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "107":{
+        "Name":"khs.sssB",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "108":{
+        "Name":"khs.ssssB",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "109":{
+        "Name":"khs.sCH3",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "110":{
+        "Name":"khs.dCH2",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "111":{
+        "Name":"khs.ssCH2",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "112":{
+        "Name":"khs.tCH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "113":{
+        "Name":"khs.dsCH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "114":{
+        "Name":"khs.aaCH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "115":{
+        "Name":"khs.sssCH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "116":{
+        "Name":"khs.ddC",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "117":{
+        "Name":"khs.tsC",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "118":{
+        "Name":"khs.dssC",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "119":{
+        "Name":"khs.aasC",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "120":{
+        "Name":"khs.aaaC",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "121":{
+        "Name":"khs.ssssC",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "122":{
+        "Name":"khs.sNH3",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "123":{
+        "Name":"khs.sNH2",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "124":{
+        "Name":"khs.ssNH2",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "125":{
+        "Name":"khs.dNH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "126":{
+        "Name":"khs.ssNH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "127":{
+        "Name":"khs.aaNH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "128":{
+        "Name":"khs.tN",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "129":{
+        "Name":"khs.sssNH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "130":{
+        "Name":"khs.dsN",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "131":{
+        "Name":"khs.aaN",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "132":{
+        "Name":"khs.sssN",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "133":{
+        "Name":"khs.ddsN",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "134":{
+        "Name":"khs.aasN",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "135":{
+        "Name":"khs.ssssN",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "136":{
+        "Name":"khs.sOH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "137":{
+        "Name":"khs.dO",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "138":{
+        "Name":"khs.ssO",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "139":{
+        "Name":"khs.aaO",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "140":{
+        "Name":"khs.sF",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "141":{
+        "Name":"khs.sSiH3",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "142":{
+        "Name":"khs.ssSiH2",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "143":{
+        "Name":"khs.sssSiH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "144":{
+        "Name":"khs.ssssSi",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "145":{
+        "Name":"khs.sPH2",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "146":{
+        "Name":"khs.ssPH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "147":{
+        "Name":"khs.sssP",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "148":{
+        "Name":"khs.dsssP",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "149":{
+        "Name":"khs.sssssP",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "150":{
+        "Name":"khs.sSH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "151":{
+        "Name":"khs.dS",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "152":{
+        "Name":"khs.ssS",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "153":{
+        "Name":"khs.aaS",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "154":{
+        "Name":"khs.dssS",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "155":{
+        "Name":"khs.ddssS",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "156":{
+        "Name":"khs.sCl",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "157":{
+        "Name":"khs.sGeH3",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "158":{
+        "Name":"khs.ssGeH2",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "159":{
+        "Name":"khs.sssGeH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "160":{
+        "Name":"khs.ssssGe",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "161":{
+        "Name":"khs.sAsH2",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "162":{
+        "Name":"khs.ssAsH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "163":{
+        "Name":"khs.sssAs",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "164":{
+        "Name":"khs.sssdAs",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "165":{
+        "Name":"khs.sssssAs",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "166":{
+        "Name":"khs.sSeH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "167":{
+        "Name":"khs.dSe",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "168":{
+        "Name":"khs.ssSe",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "169":{
+        "Name":"khs.aaSe",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "170":{
+        "Name":"khs.dssSe",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "171":{
+        "Name":"khs.ddssSe",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "172":{
+        "Name":"khs.sBr",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "173":{
+        "Name":"khs.sSnH3",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "174":{
+        "Name":"khs.ssSnH2",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "175":{
+        "Name":"khs.sssSnH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "176":{
+        "Name":"khs.ssssSn",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "177":{
+        "Name":"khs.sI",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "178":{
+        "Name":"khs.sPbH3",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "179":{
+        "Name":"khs.ssPbH2",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "180":{
+        "Name":"khs.sssPbH",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "181":{
+        "Name":"khs.ssssPb",
+        "Description":"A fragment count descriptor that uses e-state fragments.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "182":{
+        "Name":"Kier1",
+        "Description":"Kier and Hall kappa molecular shape indices compare the molecular graph with minimal and maximal molecular graphs; a description is given at: http:\/\/www.chemcomp.com\/Journal_of_CCG\/Features\/descr.htm#KH : \"they are intended to capture different aspects of molecular shape.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "183":{
+        "Name":"Kier2",
+        "Description":"Kier and Hall kappa molecular shape indices compare the molecular graph with minimal and maximal molecular graphs; a description is given at: http:\/\/www.chemcomp.com\/Journal_of_CCG\/Features\/descr.htm#KH : \"they are intended to capture different aspects of molecular shape.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "184":{
+        "Name":"Kier3",
+        "Description":"Kier and Hall kappa molecular shape indices compare the molecular graph with minimal and maximal molecular graphs; a description is given at: http:\/\/www.chemcomp.com\/Journal_of_CCG\/Features\/descr.htm#KH : \"they are intended to capture different aspects of molecular shape.",
+        "Type":"Kappa descriptors",
+        "Dimensions":"2D"
+    },
+    "185":{
+        "Name":"LipinskiFailures",
+        "Description":"The number failures of the Lipinski's Rule Of 5.",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "186":{
+        "Name":"MLogP",
+        "Description":"Prediction of logP based on the number of carbon and hetero atoms.",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "187":{
+        "Name":"MDEC-11",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "188":{
+        "Name":"MDEC-12",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "189":{
+        "Name":"MDEC-13",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "190":{
+        "Name":"MDEC-14",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "191":{
+        "Name":"MDEC-22",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "192":{
+        "Name":"MDEC-23",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "193":{
+        "Name":"MDEC-24",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "194":{
+        "Name":"MDEC-33",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "195":{
+        "Name":"MDEC-34",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "196":{
+        "Name":"MDEC-44",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "197":{
+        "Name":"MDEO-11",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "198":{
+        "Name":"MDEO-12",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "199":{
+        "Name":"MDEO-22",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "200":{
+        "Name":"MDEN-11",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "201":{
+        "Name":"MDEN-12",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "202":{
+        "Name":"MDEN-13",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "203":{
+        "Name":"MDEN-22",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "204":{
+        "Name":"MDEN-23",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "205":{
+        "Name":"MDEN-33",
+        "Description":"?The Molecular Distance Edge descriptor described in [Liu, S. and Cao, C. and Li, Z. ,?Approach to Estimation and Prediction for Normal Boiling Point (NBP) of Alkanes Based on a Novel Molecular Distance Edge (MDE) Vector, lambda, Journal of Chemical Information and Computer Sciences,?1998, 38:387-394].",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "206":{
+        "Name":"PetitjeanNumber",
+        "Description":"According to the Petitjean definition, the eccentricity of a vertex corresponds to the distance from that vertex to the most remote vertex in the graph.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "207":{
+        "Name":"topoShape",
+        "Description":"Evaluates the Petitjean shape indices,These original Petitjean number was described by Petitjean ([?Petitjean, M. ,?Applications of the radius-diameter diagram to the classification of topological and geometrical shapes of chemical compounds, Journal of Chemical Information and Computer Science,?1992, 32:331-337]) and considered the molecular graph.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "208":{
+        "Name":"geomShape",
+        "Description":"Evaluates the Petitjean shape indices,These original Petitjean number was described by Petitjean ([?Petitjean, M. ,?Applications of the radius-diameter diagram to the classification of topological and geometrical shapes of chemical compounds, Journal of Chemical Information and Computer Science,?1992, 32:331-337]) and considered the molecular graph.",
+        "Type":"Topological descriptors",
+        "Dimensions":"3D"
+    },
+    "209":{
+        "Name":"TopoPSA",
+        "Description":"Calculation of topological polar surface area based on fragment contributions (TPSA) [Ertl, P. and Rohde, B. and Selzer, P.,?Fast Calculation of Molecular Polar Surface Area as a Sum of Fragment-Based Contributions and Its Application to the Prediction of Drug Transport Properties, J. Med. Chem.,?2000, 43:3714-3717].",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "210":{
+        "Name":"tpsaEfficiency",
+        "Description":"Polar surface area expressed as a ratio to molecular size.",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "211":{
+        "Name":"VAdjMat",
+        "Description":"Vertex adjacency information (magnitude): 1 + log2 m where m is the number of heavy-heavy bonds.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "212":{
+        "Name":"VABC",
+        "Description":"Volume descriptor using the method implemented in the?VABCVolume?class.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "213":{
+        "Name":"MW",
+        "Description":"The weight of atoms of a certain element type.",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "214":{
+        "Name":"WTPT-1",
+        "Description":"Evaluates the weighted path descriptors.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "215":{
+        "Name":"WTPT-2",
+        "Description":"Evaluates the weighted path descriptors.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "216":{
+        "Name":"WTPT-3",
+        "Description":"Evaluates the weighted path descriptors.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "217":{
+        "Name":"WTPT-4",
+        "Description":"Evaluates the weighted path descriptors.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "218":{
+        "Name":"WTPT-5",
+        "Description":"Evaluates the weighted path descriptors.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "219":{
+        "Name":"WPATH",
+        "Description":"This descriptor calculates the Wiener numbers.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "220":{
+        "Name":"WPOL",
+        "Description":"This descriptor calculates the Wiener numbers.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "221":{
+        "Name":"XLogP",
+        "Description":"Prediction of logP based on the atom-type method called XLogP.",
+        "Type":"Molecular property descriptors",
+        "Dimensions":"2D"
+    },
+    "222":{
+        "Name":"Zagreb",
+        "Description":"Zagreb index: the sum of the squares of atom degree over all heavy atoms i.",
+        "Type":"Topological descriptors",
+        "Dimensions":"2D"
+    },
+    "223":{
+        "Name":"PPSA-1",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "224":{
+        "Name":"PPSA-2",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "225":{
+        "Name":"PPSA-3",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "226":{
+        "Name":"PNSA-1",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "227":{
+        "Name":"PNSA-2",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "228":{
+        "Name":"PNSA-3",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "229":{
+        "Name":"DPSA-1",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "230":{
+        "Name":"DPSA-2",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "231":{
+        "Name":"DPSA-3",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "232":{
+        "Name":"FPSA-1",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "233":{
+        "Name":"FPSA-2",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "234":{
+        "Name":"FPSA-3",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "235":{
+        "Name":"FNSA-1",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "236":{
+        "Name":"FNSA-2",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "237":{
+        "Name":"FNSA-3",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "238":{
+        "Name":"WPSA-1",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "239":{
+        "Name":"WPSA-2",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "240":{
+        "Name":"WPSA-3",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "241":{
+        "Name":"WNSA-1",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "242":{
+        "Name":"WNSA-2",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "243":{
+        "Name":"WNSA-3",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "244":{
+        "Name":"RPCG",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "245":{
+        "Name":"RNCG",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "246":{
+        "Name":"RPCS",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "247":{
+        "Name":"RNCS",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "248":{
+        "Name":"THSA",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "249":{
+        "Name":"TPSA",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "250":{
+        "Name":"RHSA",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "251":{
+        "Name":"RPSA",
+        "Description":"29 Charged Partial Surface Area (CPSA) descriptors.",
+        "Type":"CPSA descriptors",
+        "Dimensions":"3D"
+    },
+    "252":{
+        "Name":"Wlambda1.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-380].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "253":{
+        "Name":"Wlambda2.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-381].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "254":{
+        "Name":"Wlambda3.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-382].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "255":{
+        "Name":"Wnu1.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-383].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "256":{
+        "Name":"Wnu2.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-384].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "257":{
+        "Name":"Wgamma1.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-385].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "258":{
+        "Name":"Wgamma2.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-386].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "259":{
+        "Name":"Wgamma3.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-387].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "260":{
+        "Name":"Weta1.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-388].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "261":{
+        "Name":"Weta2.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-389].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "262":{
+        "Name":"Weta3.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-390].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "263":{
+        "Name":"WT.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-391].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "264":{
+        "Name":"WA.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-392].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "265":{
+        "Name":"WV.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-393].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "266":{
+        "Name":"WK.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-394].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "267":{
+        "Name":"WG.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-395].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "268":{
+        "Name":"WD.unity",
+        "Description":"Holistic descriptors described by Todeschini et al [Todeschini, R. and Gramatica, P.,?New 3D Molecular Descriptors: The WHIM theory and QAR Applications, Persepectives in Drug Discovery and Design,?1998, ?:355-396].",
+        "Type":"WHIM descriptors",
+        "Dimensions":"3D"
+    },
+    "269":{
+        "Name":"GRAV-1",
+        "Description":"IDescriptor characterizing the mass distribution of the molecule.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "270":{
+        "Name":"GRAV-2",
+        "Description":"IDescriptor characterizing the mass distribution of the molecule.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "271":{
+        "Name":"GRAV-3",
+        "Description":"IDescriptor characterizing the mass distribution of the molecule.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "272":{
+        "Name":"GRAVH-1",
+        "Description":"IDescriptor characterizing the mass distribution of the molecule.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "273":{
+        "Name":"GRAVH-2",
+        "Description":"IDescriptor characterizing the mass distribution of the molecule.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "274":{
+        "Name":"GRAVH-3",
+        "Description":"IDescriptor characterizing the mass distribution of the molecule.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "275":{
+        "Name":"GRAV-4",
+        "Description":"IDescriptor characterizing the mass distribution of the molecule.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "276":{
+        "Name":"GRAV-5",
+        "Description":"IDescriptor characterizing the mass distribution of the molecule.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "277":{
+        "Name":"GRAV-6",
+        "Description":"IDescriptor characterizing the mass distribution of the molecule.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "278":{
+        "Name":"LOBMIN",
+        "Description":"Evaluates length over breadth descriptors.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "279":{
+        "Name":"LOBMAX",
+        "Description":"Evaluates length over breadth descriptors.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "280":{
+        "Name":"MOMI-X",
+        "Description":"A descriptor that calculates the moment of inertia and radius of gyration.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "281":{
+        "Name":"MOMI-Y",
+        "Description":"A descriptor that calculates the moment of inertia and radius of gyration.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "282":{
+        "Name":"MOMI-Z",
+        "Description":"A descriptor that calculates the moment of inertia and radius of gyration.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "283":{
+        "Name":"MOMI-XY",
+        "Description":"A descriptor that calculates the moment of inertia and radius of gyration.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "284":{
+        "Name":"MOMI-XZ",
+        "Description":"A descriptor that calculates the moment of inertia and radius of gyration.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "285":{
+        "Name":"MOMI-YZ",
+        "Description":"A descriptor that calculates the moment of inertia and radius of gyration.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    },
+    "286":{
+        "Name":"MOMI-R",
+        "Description":"A descriptor that calculates the moment of inertia and radius of gyration.",
+        "Type":"Geometrical descriptors",
+        "Dimensions":"3D"
+    }
+}
