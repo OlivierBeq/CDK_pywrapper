@@ -13,6 +13,7 @@ import org.openscience.cdk.qsar.DescriptorValue;
 import org.openscience.cdk.qsar.IDescriptor;
 import org.openscience.cdk.qsar.IMolecularDescriptor;
 import org.openscience.cdk.qsar.descriptors.molecular.AminoAcidCountDescriptor;
+import org.openscience.cdk.qsar.descriptors.molecular.JPlogPDescriptor;
 import org.openscience.cdk.silent.SilentChemObjectBuilder;
 import org.openscience.cdk.tools.AtomTypeAwareSaturationChecker;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;;
@@ -43,6 +44,7 @@ public class Main {
             DescriptorEngine descriptorEngine = new DescriptorEngine(IMolecularDescriptor.class,
                     SilentChemObjectBuilder.getInstance());
             List<IDescriptor> descriptors = descriptorEngine.getDescriptorInstances();
+            descriptors.add(new JPlogPDescriptor());
             // Fingerprint names, to be chosen from
             List<String> fp_names = new ArrayList<>(Arrays.asList("FP", "ExtFP", "EStateFP", "GraphFP", "MACCSFP",
                     "PubchemFP", "SubFP", "KRFP", "AP2DFP", "HybridFP", "LingoFP", "SPFP", "SigFP", "CircFP"));
@@ -188,14 +190,14 @@ public class Main {
                                 break;
                             }
                         }
+                        // Print descriptor names
+                        if (!obtained_names) {
+                            System.out.println(String.join(" ", value_names));
+                            obtained_names = true;
+                        }
                         if (skip) {
                             System.out.println(String.join(" ", Collections.nCopies(descriptors.size(), "NaN")));
                         } else {
-                            // Print descriptor names
-                            if (!obtained_names) {
-                                System.out.println(String.join(" ", value_names));
-                                obtained_names = true;
-                            }
                             // Print values to sdtout
                             System.out.println(String.join(" ", desc_values));
                         }
