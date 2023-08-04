@@ -7,6 +7,7 @@ from __future__ import annotations
 import io
 import multiprocessing
 import os
+import subprocess
 import warnings
 from copy import deepcopy
 from enum import Enum, auto
@@ -177,26 +178,30 @@ Steinbeck et al., (2003) J. Chem. Inf. Comput. Sci. 43(2):493-500, doi:10.1021/c
 
         :param command: The command to be run.
         """
-        with Popen(command.split(), stdout=PIPE) as process:
+        with Popen(command.split(), stdout=PIPE, stderr=subprocess.DEVNULL) as process:
             values = process.stdout.read().decode()
-            # Empty result file
-            if len(values) == 0:
-                details = self.get_details()
-                values = pd.DataFrame(np.full((self._n_mols, details.shape[0]), np.nan),
-                                      columns=details.Name)
-            elif '{' not in values:
-                values = pd.read_csv(io.StringIO(values), sep=' ')
-            else:
-                try:
-                    values = pd.DataFrame.from_dict(eval('{%s}' % values), orient='index').fillna(0)
-                except pd.errors.EmptyDataError:
-                    raise RuntimeError('CDK could not obtain molecular descriptors, maybe due to a faulty molecule')
-            # If only 2D, remove 3D descriptors
-            if not self.include_3D and self.fingerprint is None:
-                # Get 3D descriptor names to remove
-                descs_3D = self.get_details()
-                descs_3D = descs_3D[descs_3D.Dimensions == '3D']
-                values = values.drop(columns=descs_3D.Name.tolist())
+        # CDK barf preventing correct parsing
+        if 'not found' in values:
+            # Omit error
+            values = '\n'.join(line for line in values.split('\n') if 'not found' not in values)
+        # Empty result file
+        if len(values) == 0:
+            details = self.get_details()
+            values = pd.DataFrame(np.full((self._n_mols, details.shape[0]), np.nan),
+                                  columns=details.Name)
+        elif '{' not in values:
+            values = pd.read_csv(io.StringIO(values), sep=' ')
+        else:
+            try:
+                values = pd.DataFrame.from_dict(eval('{%s}' % values), orient='index').fillna(0)
+            except pd.errors.EmptyDataError:
+                raise RuntimeError('CDK could not obtain molecular descriptors, maybe due to a faulty molecule')
+        # If only 2D, remove 3D descriptors
+        if not self.include_3D and self.fingerprint is None:
+            # Get 3D descriptor names to remove
+            descs_3D = self.get_details()
+            descs_3D = descs_3D[descs_3D.Dimensions == '3D']
+            values = values[[col for col in values.columns if col not in descs_3D.Name.tolist()]]
         return values
 
     def _calculate(self, mols: List[Chem.Mol]) -> pd.DataFrame:
