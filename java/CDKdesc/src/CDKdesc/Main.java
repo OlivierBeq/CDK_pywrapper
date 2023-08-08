@@ -186,8 +186,9 @@ public class Main {
                                         .toString()
                                         .split(",")));
                             } catch (Exception e){
-                                skip = true;
-                                break;
+                                int size = ((IMolecularDescriptor)desc).getDescriptorNames().length;
+                                List<String> nans = Collections.nCopies(size, "NaN");
+                                desc_values.addAll(nans);
                             }
                         }
                         // Print descriptor names
@@ -195,12 +196,7 @@ public class Main {
                             System.out.println(String.join(" ", value_names));
                             obtained_names = true;
                         }
-                        if (skip) {
-                            System.out.println(String.join(" ", Collections.nCopies(descriptors.size(), "NaN")));
-                        } else {
-                            // Print values to sdtout
-                            System.out.println(String.join(" ", desc_values));
-                        }
+                        System.out.println(String.join(" ", desc_values));
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

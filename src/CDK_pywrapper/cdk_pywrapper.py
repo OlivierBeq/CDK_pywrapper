@@ -67,7 +67,7 @@ class CDK:
         self.nbits = nbits
         self.depth = depth
 
-    def calculate(self, mols: Iterable[Chem.Mol], show_banner: bool = True, njobs: int = 1,
+    def calculate(self, mols: List[Chem.Mol], show_banner: bool = True, njobs: int = 1,
                   chunksize: Optional[int] = 1000) -> pd.DataFrame:
         """Calculate molecular fingerprints.
 
@@ -90,7 +90,6 @@ class CDK:
                            ]
             return (pd.concat([future.result() for future in futures]).
                     reset_index(drop=True)
-                    .fillna(0)
                     .convert_dtypes()
                     )
         # Single process
@@ -150,7 +149,6 @@ Steinbeck et al., (2003) J. Chem. Inf. Comput. Sci. 43(2):493-500, doi:10.1021/c
                     writer.write(mol)
                     self._n_mols += 1
                 else:
-                    print(i)
                     self._skipped.append(i)
                 self.n += 1
             writer.close()
@@ -183,7 +181,7 @@ Steinbeck et al., (2003) J. Chem. Inf. Comput. Sci. 43(2):493-500, doi:10.1021/c
         # CDK barf preventing correct parsing
         if 'not found' in values:
             # Omit error
-            values = '\n'.join(line for line in values.split('\n') if 'not found' not in values)
+            values = '\n'.join(line for line in values.split('\n') if 'not found' not in line)
         # Empty result file
         if len(values) == 0:
             details = self.get_details()
@@ -218,18 +216,16 @@ Steinbeck et al., (2003) J. Chem. Inf. Comput. Sci. 43(2):493-500, doi:10.1021/c
         self._cleanup()
         # Insert lines of skipped molecules
         if len(self._skipped):
-            results = (pd.DataFrame(np.insert(results.values, self._skipped,
+            results = pd.DataFrame(np.insert(results.values, self._skipped,
                                               values=[np.NaN] * len(results.columns),
                                               axis=0),
                                     columns=results.columns)
-                       )
         results = (results.apply(pd.to_numeric, errors='coerce', axis=1)
-                          .fillna(0)
                           .convert_dtypes()
                    )
         return results
 
-    def _multiproc_calculate(self, mols: List[Chem.Mol], nbits: int = 1024) -> pd.DataFrame:
+    def _multiproc_calculate(self, mols: List[Chem.Mol]) -> pd.DataFrame:
         """Calculate CDK descriptors and fingerprints in thread-safe manner.
 
         :param mols: RDKit molecules for which CDK descriptors and fingerprints should be calculated

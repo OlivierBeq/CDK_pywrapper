@@ -1722,7 +1722,7 @@
         "Dimensions":"3D"
     },
     "287":{
-        "Name":"JPlogP",
+        "Name":"JPLogP",
         "Description":"This class calculates JPlogP [Plante, J. and Werner, S. ,JPlogP: an improved logP predictor trained using predicted data, Journal of Cheminformatics, 2018, 10].",
         "Type":"Geometrical descriptors",
         "Dimensions":"2D"
