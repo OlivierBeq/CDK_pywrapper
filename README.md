@@ -69,6 +69,7 @@ The following fingerprints can be calculated:
 |-----------|------------------------------------------------------------------------------------|
 | FP        | CDK fingerprint                                                                    |
 | ExtFP     | Extended CDK fingerprint (includes 25 bits for ring features and isotopic masses)  |
+| EStateFP  | Electrotopological state fingerprint (79 bits)                                     |
 | GraphFP   | CDK fingerprinter ignoring bond orders                                             |
 | MACCSFP   | Public MACCS fingerprint                                                           |
 | PubchemFP | PubChem substructure fingerprint                                                   |
