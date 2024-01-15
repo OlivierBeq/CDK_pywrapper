@@ -7,7 +7,9 @@ import org.openscience.cdk.aromaticity.ElectronDonation;
 import org.openscience.cdk.fingerprint.*;
 import org.openscience.cdk.graph.Cycles;
 import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.io.iterator.DefaultIteratingChemObjectReader;
 import org.openscience.cdk.io.iterator.IteratingSDFReader;
+import org.openscience.cdk.io.iterator.IteratingSMILESReader;
 import org.openscience.cdk.qsar.DescriptorEngine;
 import org.openscience.cdk.qsar.DescriptorValue;
 import org.openscience.cdk.qsar.IDescriptor;
@@ -15,6 +17,8 @@ import org.openscience.cdk.qsar.IMolecularDescriptor;
 import org.openscience.cdk.qsar.descriptors.molecular.AminoAcidCountDescriptor;
 import org.openscience.cdk.qsar.descriptors.molecular.JPlogPDescriptor;
 import org.openscience.cdk.silent.SilentChemObjectBuilder;
+import org.openscience.cdk.smiles.SmilesGenerator;
+import org.openscience.cdk.smiles.SmiFlavor;
 import org.openscience.cdk.tools.AtomTypeAwareSaturationChecker;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;;
 
@@ -35,6 +39,8 @@ public class Main {
         options.addOption("nBits", true, "Number of bits of FP and GraphFP fingerprints (default: 1024)");
         options.addOption("depth", true, "Search depth of FP and GraphFP fingerprints (default: 6)");
         options.addOption("i", "input", true, "Input v2000 SD file");
+        options.addOption("s", "smiles_input", true, "Input SMILES file (ignored if SD file supplied)");
+        options.addOption("S", "output_smiles", false, "Output the CDK canonical SMILES of parsed molecules");
         options.addOption("h", "help", false, "Shows this Help");
 
         try {
@@ -51,9 +57,9 @@ public class Main {
             // Display help
             if (commandLine.hasOption("help")) {
                 new HelpFormatter().printHelp("java -jar CDKdesc.jar", options);
-            } else if (!commandLine.hasOption("input")){
+            } else if (!commandLine.hasOption("input") & ! commandLine.hasOption("smiles_input")){
                 // No input given
-                throw new Exception("Input V2000 SD file must be provided.");
+                throw new Exception("Input V2000 SD file or SMILES file must be provided.");
             } else if (commandLine.hasOption("fingerprint")) {
                 // Obtain type of fingerprint
                 String fp_value = commandLine.getOptionValue("fingerprint");
@@ -91,14 +97,33 @@ public class Main {
                         // Default to eCDKFingerprinter
                             throw new Exception("Fingerprint type " + fp_value + " is not implemented.");
                 };
+                // Open input file
+                FileInputStream fis;
+                DefaultIteratingChemObjectReader<IAtomContainer> supplier;
+                if (commandLine.hasOption("input")) {
+                    try {
+                        fis = new FileInputStream(commandLine.getOptionValue("input"));
+                        supplier = new IteratingSDFReader(fis, DefaultChemObjectBuilder.getInstance());
+                    } catch (Exception e) {
+                        throw new IOException("Input SD file not found", e);
+                    }
+                } else { // (commandLine.hasOption("smiles_input"))
+                    try {
+                        fis = new FileInputStream(commandLine.getOptionValue("smiles_input"));
+                        supplier = new IteratingSMILESReader(fis, DefaultChemObjectBuilder.getInstance());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        throw new IOException("Input SMILES file not found", e);
+                    }
+                }
+                // Obtain a SMILES generator
+                SmilesGenerator generator = new SmilesGenerator(SmiFlavor.Absolute);
                 // Obtain FP names and print
                 List<String> value_names = new ArrayList<>(); //
                 boolean obtained_names = false;
-
                 // Calculate fingerprint values
                 // Read content of file
-                try (FileInputStream fis = new FileInputStream(commandLine.getOptionValue("input"))) {
-                    IteratingSDFReader supplier = new IteratingSDFReader(fis, DefaultChemObjectBuilder.getInstance());
+                try {
                     // Iterate over molecules
                     int idx_mol = 0;
                     while (supplier.hasNext()) {
@@ -131,10 +156,18 @@ public class Main {
                                         .mapToObj(x -> fp_value + "_" + x)
                                         .toList());
                                 obtained_names = true;
-                                System.out.println(String.join(" ", value_names));
+                                if (commandLine.hasOption("output_smiles")) {
+                                    System.out.println("SMILES " + String.join(" ", value_names));
+                                } else {
+                                    System.out.println(String.join(" ", value_names));
+                                }
                             }
                             // Print values to sdtout
-                            System.out.println(String.join(" ", bits));
+                            if (commandLine.hasOption("output_smiles")) {
+                                System.out.println(generator.create(molecule) + " " + String.join(" ", bits));
+                            } else {
+                                System.out.println(String.join(" ", bits));
+                            }
                         } else { // Signature is a Hashmap
                             Map<String, Integer> raw_fp = fp.getRawFingerprint(molecule);
                             String[] bits = new String[raw_fp.size()];
@@ -143,7 +176,12 @@ public class Main {
                                 bits[index] = "\"" + entry.getKey() + "\": " + entry.getValue().toString();
                                 index += 1;
                             }
-                            System.out.println(String.valueOf(idx_mol) + ": {" + String.join(", ", bits) + "},");
+                            // Print values to sdtout
+                            if (commandLine.hasOption("output_smiles")) {
+                                System.out.println("\"" + String.valueOf(idx_mol) + "|" + generator.create(molecule) + "\": {" + String.join(", ", bits) + "},");
+                            } else {
+                                System.out.println(String.valueOf(idx_mol) + ": {" + String.join(", ", bits) + "},");
+                            }
                             idx_mol +=1;
                         }
                     }
@@ -151,12 +189,31 @@ public class Main {
                     e.printStackTrace();
                 }
             } else {
+                // Open input file
+                FileInputStream fis;
+                DefaultIteratingChemObjectReader<IAtomContainer> supplier;
+                if (commandLine.hasOption("input")) {
+                    try {
+                        fis = new FileInputStream(commandLine.getOptionValue("input"));
+                        supplier = new IteratingSDFReader(fis, DefaultChemObjectBuilder.getInstance());
+                    } catch (Exception e) {
+                        throw new IOException("Input SD file not found", e);
+                    }
+                } else { // (commandLine.hasOption("smiles_input"))
+                    try {
+                        fis = new FileInputStream(commandLine.getOptionValue("smiles_input"));
+                        supplier = new IteratingSMILESReader(fis, DefaultChemObjectBuilder.getInstance());
+                    } catch (Exception e) {
+                        throw new IOException("Input SMILES file not found", e);
+                    }
+                }
+                // Obtain a SMILES generator
+                SmilesGenerator generator = new SmilesGenerator(SmiFlavor.Absolute);
                 // Calculate descriptor values
                 List<String> value_names = new ArrayList<>();
                 boolean obtained_names = false;
                 // Read content of file
-                try (FileInputStream fis = new FileInputStream(commandLine.getOptionValue("input"))) {
-                    IteratingSDFReader supplier = new IteratingSDFReader(fis, DefaultChemObjectBuilder.getInstance());
+                try {
                     // Iterate over molecules
                     while (supplier.hasNext()) {
                         IAtomContainer molecule = supplier.next();
@@ -173,10 +230,18 @@ public class Main {
                                 System.err.println("Skipping AminoAcidCountDescriptor");
                                 continue;
                             }
+                            Boolean success = true;
+                            DescriptorValue raw_desc_vals = null;
                             try {
                                 // Calculate descriptors
-                                DescriptorValue raw_desc_vals = ((IMolecularDescriptor) desc).calculate(molecule);
-
+                                raw_desc_vals = ((IMolecularDescriptor) desc).calculate(molecule);
+                            } catch (StackOverflowError | Exception e) {
+                                success = false;
+                                int size = ((IMolecularDescriptor)desc).getDescriptorNames().length;
+                                List<String> nans = Collections.nCopies(size, "NaN");
+                                desc_values.addAll(nans);
+                            }
+                            if (success) {
                                 // Obtain molecular descriptor names
                                 if (!obtained_names) {
                                     value_names.addAll(List.of(raw_desc_vals.getNames()));
@@ -185,20 +250,24 @@ public class Main {
                                 desc_values.addAll(List.of(raw_desc_vals.getValue()
                                         .toString()
                                         .split(",")));
-                            } catch (Exception e){
-                                int size = ((IMolecularDescriptor)desc).getDescriptorNames().length;
-                                List<String> nans = Collections.nCopies(size, "NaN");
-                                desc_values.addAll(nans);
                             }
                         }
                         // Print descriptor names
                         if (!obtained_names) {
-                            System.out.println(String.join(" ", value_names));
+                            if (commandLine.hasOption("output_smiles")) {
+                                System.out.println("SMILES " + String.join(" ", value_names));
+                            } else {
+                                System.out.println(String.join(" ", value_names));
+                            }
                             obtained_names = true;
                         }
-                        System.out.println(String.join(" ", desc_values));
+                        if (commandLine.hasOption("output_smiles")) {
+                            System.out.println(generator.create(molecule) + " " + String.join(" ", desc_values));
+                        } else {
+                            System.out.println(String.join(" ", desc_values));
+                        }
                     }
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

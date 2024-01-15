@@ -28,6 +28,14 @@ class TestFingerprints(unittest.TestCase):
                 self.assertTrue(values.shape[0] == len(MOLECULES))
                 self.assertEqual(len(values.columns.unique().tolist()), len(values.columns))
             self.assertFalse(values.isna().any().any())
+            values = cdk.calculate(self.molecules, show_banner=False, cdk_smiles=True)
+            if fp_type is not FPType.SigFP:
+                self.assertEqual(values.shape, (len(MOLECULES), sizes.get(fp_type, 1024) + 1))
+                self.assertEqual(len(values.columns.unique().tolist()), sizes.get(fp_type, 1024) + 1)
+            else:
+                self.assertTrue(values.shape[0] == len(MOLECULES))
+                self.assertEqual(len(values.columns.unique().tolist()), len(values.columns))
+            self.assertFalse(values.isna().any().any())
 
 
     def test_fingerprint_multithread(self):
@@ -39,7 +47,15 @@ class TestFingerprints(unittest.TestCase):
             if fp_type is not FPType.SigFP:
                 self.assertEqual(values.shape, (len(MOLECULES), sizes.get(fp_type, 1024)))
                 self.assertEqual(len(values.columns.unique().tolist()), sizes.get(fp_type, 1024))
+                self.assertFalse(values.isna().any().any())
             else:
                 self.assertTrue(values.shape[0] == len(MOLECULES))
                 self.assertEqual(len(values.columns.unique().tolist()), len(values.columns))
-            self.assertFalse(values.isna().any().any())
+            values = cdk.calculate(self.molecules, show_banner=False, cdk_smiles=True)
+            if fp_type is not FPType.SigFP:
+                self.assertEqual(values.shape, (len(MOLECULES), sizes.get(fp_type, 1024) + 1))
+                self.assertEqual(len(values.columns.unique().tolist()), sizes.get(fp_type, 1024) + 1)
+                self.assertFalse(values.isna().any().any())
+            else:
+                self.assertTrue(values.shape[0] == len(MOLECULES))
+                self.assertEqual(len(values.columns.unique().tolist()), len(values.columns))
