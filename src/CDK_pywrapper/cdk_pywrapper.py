@@ -266,7 +266,7 @@ Steinbeck et al., (2003) J. Chem. Inf. Comput. Sci. 43(2):493-500, doi:10.1021/c
         # Insert lines of skipped molecules
         if len(self._skipped):
             results = pd.DataFrame(np.insert(results.values, self._skipped,
-                                              values=[np.NaN] * len(results.columns),
+                                              values=[np.nan] * len(results.columns),
                                               axis=0),
                                     columns=results.columns)
         # Omit SMILES column from casting if in values
