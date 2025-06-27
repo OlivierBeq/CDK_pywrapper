@@ -43,7 +43,7 @@ def make_temp_jre() -> Tuple[str, str]:
     return outdir, path
 
 
-def get_jre_in_dir(dir: str):
+def get_jre_in_dir(dir: str, version: int):
     """Recursively search the directory to find a JRE."""
     paths = glob.glob(os.path.join(dir, '**', 'server',
                                    'jvm.dll' if sys.platform == "win32" else 'libjvm.so'
