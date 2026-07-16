@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CDK_pywrapper"
+dynamic = ["version"]
+description = "Python wrapper for CDK molecular descriptors and fingerprints"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Olivier J. M. Béquignon", email = "olivier.bequignon.maintainer@gmail.com" },
+]
+maintainers = [
+    { name = "Olivier J. M. Béquignon", email = "olivier.bequignon.maintainer@gmail.com" },
+]
+keywords = [
+    "Chemistry Development Kit",
+    "molecular descriptors",
+    "molecular fingerprints",
+    "cheminformatics",
+    "QSAR",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "more-itertools",
+    "numpy",
+    "pandas",
+    "rdkit",
+    "install-jdk==0.3.0",
+    "filelock",
+]
+
+[project.urls]
+Homepage = "https://github.com/OlivierBeq/CDK_pywrapper"
+
+[project.optional-dependencies]
+testing = ["pytest", "pytest-cov"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.jar", "py.typed"]
+
+[tool.setuptools.dynamic]
+version = { attr = "CDK_pywrapper.__version__" }
+
+[tool.ruff]
+line-length = 120
+src = ["src"]
+exclude = ["build", "dist", "*.egg-info"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4"]
+
+[tool.ruff.lint.per-file-ignores]
+# The descriptor column-name header is a single embedded data literal, not wrapped code.
+"src/CDK_pywrapper/cdk_pywrapper.py" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["CDK_pywrapper"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
