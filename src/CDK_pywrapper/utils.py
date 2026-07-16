@@ -1,71 +1,41 @@
-# -*- coding: utf-8
-
 """Utility functions."""
 
-import sys
-import os
+from __future__ import annotations
+
 import glob
+import os
+import sys
 import tempfile
-import shutil
-from pathlib import Path
-from typing import Tuple
 
+from filelock import FileLock
+from jdk import _JRE_DIR
+from jdk import install as _jre_install
 from rdkit import Chem
-from jdk import install as _jre_install, _JRE_DIR
 
 
-def install_jre(version: int = 19):
-    """Install a Java Runtime Environment."""
-    path = get_jre_in_dir(_JRE_DIR, version)
-    if len(path) == 0:
-        # Could not find JRE, install it
-        _ = _jre_install(version, jre=True)
-        path = get_jre_in_dir(_JRE_DIR, version)
-    return path
+def install_java(version: int = 19) -> str | None:
+    """Install a Java Runtime Environment.
 
+    A cross-process file lock guards the check-then-install so that concurrent
+    processes (e.g. parallel ``njobs`` workers, or pytest-xdist workers) racing on a
+    cold JRE cache cannot collide on ``install-jdk``'s fixed, version-derived
+    download/extraction path.
 
-def make_temp_jre() -> Tuple[str, str]:
-    """Copy the installed JRE to a temporary file.
-
-    Allows multiprocessing capacities.
-
-    :return: a tuple of (path to temp dir, path to the JRE)
+    :param version: the major JDK version to install (default: 19)
+    :return: path to the ``java`` executable, or None if it could not be installed
     """
-    # Path of JRE installation
-    install_path = [path for path in Path(install_jre()).parents
-                    if path.as_posix().endswith('jre') and not path.as_posix().endswith('.jre')][0]
-    # Path of temp dir
-    outdir = mktempdir()
-    # Make copy into dir
-    shutil.copytree(install_path, os.path.join(outdir, 'jre'))
-    # Find JRE in temp dir
-    path = get_jre_in_dir(outdir)
-    return outdir, path
-
-
-def get_jre_in_dir(dir: str, version: int):
-    """Recursively search the directory to find a JRE."""
-    paths = glob.glob(os.path.join(dir, '**', 'server',
-                                   'jvm.dll' if sys.platform == "win32" else 'libjvm.so'
-                                   ), recursive=True)
-    path = [path for path in paths if f'jre-{version}' in path]
-    if len(path):
-        return path[0]
-    return None
-
-
-def install_java(version: int = 19):
-    """Install a Java Runtime Environment."""
-    path = get_java_in_dir(_JRE_DIR, version)
-    if path is None:
-        # Could not find JRE, install it
-        _ = _jre_install(version, jre=True)
+    os.makedirs(_JRE_DIR, exist_ok=True)
+    with FileLock(os.path.join(_JRE_DIR, f'.install-{version}.lock')):
         path = get_java_in_dir(_JRE_DIR, version)
+        if path is None:
+            # Could not find JRE, install it
+            _jre_install(version, jre=True)
+            path = get_java_in_dir(_JRE_DIR, version)
     return path
 
 
-def get_java_in_dir(dir: str, version: int):
-    """Recursively search the directory to find a JRE."""
+def get_java_in_dir(dir: str, version: int) -> str | None:
+    """Recursively search the directory to find a Java executable of the given version."""
     paths = glob.glob(os.path.join(dir, '**', 'bin',
                                   'java.exe' if sys.platform == "win32" else 'java'
                                   ), recursive=True)
@@ -75,13 +45,13 @@ def get_java_in_dir(dir: str, version: int):
     return None
 
 
-def mktempdir(suffix: str = None) -> str:
+def mktempdir(suffix: str | None = None) -> str:
     """Return the path to a writeable temporary directory."""
     dir = tempfile.mkdtemp(suffix=suffix)
     return dir
 
 
-def mktempfile(suffix: str = None) -> str:
+def mktempfile(suffix: str | None = None) -> str:
     """Return the path to a writeable temporary file."""
     file = tempfile.mkstemp(suffix=suffix)
     os.close(file[0])
