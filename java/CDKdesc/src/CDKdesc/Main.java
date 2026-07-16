@@ -74,8 +74,8 @@ public class Main {
                 }
                 // Same with search depth
                 int searchDepth = 6;
-                if (commandLine.hasOption("searchDepth")) {
-                    searchDepth = Integer.parseInt(commandLine.getOptionValue("searchDepth"));
+                if (commandLine.hasOption("depth")) {
+                    searchDepth = Integer.parseInt(commandLine.getOptionValue("depth"));
                 }
                 // Instantiate fingerprint calculator
                 IFingerprinter fp = switch (fp_value) {

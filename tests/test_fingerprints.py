@@ -1,12 +1,9 @@
-# -*- coding: utf-8 -*-
-
-
 """Tests for molecular fingerprints."""
 
 import unittest
 
 from CDK_pywrapper import CDK, FPType
-from tests.constants import *
+from tests.constants import MOLECULES, NJOBS
 
 
 class TestFingerprints(unittest.TestCase):
@@ -38,12 +35,12 @@ class TestFingerprints(unittest.TestCase):
             self.assertFalse(values.isna().any().any())
 
 
-    def test_fingerprint_multithread(self):
+    def test_fingerprint_multiprocess(self):
         sizes = {FPType.EStateFP: 79, FPType.MACCSFP: 166, FPType.PubchemFP: 881,
                  FPType.KRFP: 4860, FPType.SubFP: 307, FPType.AP2DFP: 780}
         for fp_type in FPType:
             cdk = CDK(fingerprint=fp_type)
-            values = cdk.calculate(self.molecules, show_banner=False, njobs=-1, chunksize=1)
+            values = cdk.calculate(self.molecules, show_banner=False, njobs=NJOBS, chunksize=None)
             if fp_type is not FPType.SigFP:
                 self.assertEqual(values.shape, (len(MOLECULES), sizes.get(fp_type, 1024)))
                 self.assertEqual(len(values.columns.unique().tolist()), sizes.get(fp_type, 1024))
@@ -51,7 +48,7 @@ class TestFingerprints(unittest.TestCase):
             else:
                 self.assertTrue(values.shape[0] == len(MOLECULES))
                 self.assertEqual(len(values.columns.unique().tolist()), len(values.columns))
-            values = cdk.calculate(self.molecules, show_banner=False, cdk_smiles=True)
+            values = cdk.calculate(self.molecules, show_banner=False, cdk_smiles=True, njobs=NJOBS, chunksize=None)
             if fp_type is not FPType.SigFP:
                 self.assertEqual(values.shape, (len(MOLECULES), sizes.get(fp_type, 1024) + 1))
                 self.assertEqual(len(values.columns.unique().tolist()), sizes.get(fp_type, 1024) + 1)
